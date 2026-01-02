@@ -148,7 +148,6 @@ body {
     background: var(--light-gray);
     text-align: center;
     padding: 80px 20px;
-    margin-bottom: 5rem;
 }
 
 .hero h1 {
@@ -176,6 +175,74 @@ body {
     margin: auto;
 }
 
+.service-card {
+    position: relative;
+    background: #ffffff;
+    padding: 28px 22px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.service-card h3 {
+    margin-top: 12px;
+    font-size: 1.1rem;
+    color: var(--primary-blue);
+}
+
+.service-card p {
+    font-size: 0.95rem;
+    color: #555;
+    margin-top: 8px;
+}
+
+.service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.12);
+}
+
+.services {
+    gap: 80px;
+}
+
+.card-image {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translate(-50%, 20px);
+    width: 90%;
+    opacity: 0;
+    transition: all 0.35s ease;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.card-image img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+}
+
+.service-card:hover .card-image {
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+
+@media (max-width: 833.5px) {
+    .card-image {
+        display: none;
+    }
+}
+
+.section-title {
+    text-align: center;
+    color: var(--primary-blue);
+    font-size: 2rem;
+    margin-bottom: 40px;
+    width: 100%;
+}
+
 .services,
 .benefits {
     display: grid;
@@ -184,7 +251,6 @@ body {
     text-align: center;
 }
 
-.services .card,
 .benefits .card {
     background: white;
     border: 1px solid #ddd;
